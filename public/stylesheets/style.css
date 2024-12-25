@@ -109,12 +109,11 @@ body {
   }
 
   .gallery img {
-    width: calc(100% - 30px); /* Immagini a larghezza piena */
+    width:100%; /* Immagini a larghezza piena */
     margin: 0; /* Rimuovi il margine laterale */
   }
 
   .gallery-container {
-    overflow: hidden;
     white-space: nowrap;
     cursor: grab;
   }
