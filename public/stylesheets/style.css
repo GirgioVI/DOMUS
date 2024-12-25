@@ -34,7 +34,6 @@ body {
   margin: 20px auto;
   display: flex;
   position: relative;
-  overflow-x: hidden;
 }
 
 .gallery {
@@ -42,6 +41,7 @@ body {
   transition: transform 0.5s ease;
   margin-left: 20%;
 }
+
 
 #active{
   opacity: 1;
@@ -114,7 +114,14 @@ body {
   }
 
   .gallery-container {
-    margin: 10px; /* Riduci il margine della galleria */
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: grab;
+  }
+
+  .gallery-container {
+    margin: 10px;
+    overflow-x: hidden;
   }
 
   .gallery-container button {
