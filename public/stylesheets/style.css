@@ -105,7 +105,7 @@ body {
   }
 
   .gallery{
-    margin-left: 5%;
+    margin-left: 0;
   }
 
   .gallery img {
@@ -116,9 +116,6 @@ body {
   .gallery-container {
     white-space: nowrap;
     cursor: grab;
-  }
-
-  .gallery-container {
     margin: 10px;
     overflow-x: hidden;
   }
