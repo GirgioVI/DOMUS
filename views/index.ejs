@@ -7,39 +7,49 @@
 </head>
 <body>
 
+ 
   <div class="header">
     <div class="title">
       <h1>DOMUS</h1>
     </div>  
   </div>  
+  <div class="nav-bar">
+    <ul>
+      <li><a class="active" href="">Home</a></li>
+      <li><a href="/news">News</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
 
   
   <div class="content">
-    <div class="gallery-container">
-      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-      <div class="gallery">
-        <img src="/images/ristorante.jpg" alt="Immagine 1" id="active">
-        <img src="/images/orto.jpg" alt="Immagine 2" id="nonActive">
-        <img src="/images/ristorante.jpg" alt="Immagine 3" id="nonActive">
-        <img src="/images/orto.jpg" alt="Immagine 4" id="nonActive">
-        <img src="/images/ristorante.jpg" alt="Immagine 5" id="nonActive">
-        <img src="/images/orto.jpg" alt="Immagine 6" id="nonActive">
-      </div>
-      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    <div class="image">
+      <img src="images\ristorante.jpg" alt="resturant">
     </div>
     <div class="table">
-      <div class="resturant-idea">
-        <h1>Idea del ristorante</h1>
+      <div class="table-box">
+        <h1 id="idea-title">Idea del ristorante</h1>
+        <div class="idea-text">
+          <p>Un luogo dove il gusto e la tradizione si incontrano per offrire un’esperienza unica. Bla bla bla bla bla bla bla, bla bla bla bla, bla bla bla bla bla bla bla. Ogni piatto è preparato con passione e ingredienti selezionati, bla bla bla bla bla, bla bla bla bla bla. L’atmosfera accogliente e l’attenzione al dettaglio rendono ogni momento speciale. Bla bla bla bla bla bla bla, bla bla bla bla bla bla bla bla. Prenota subito il tuo tavolo per scoprire un mondo di sapori e di emozioni.</p>
+          <p>Un luogo dove il gusto e la tradizione si incontrano per offrire un’esperienza unica. Bla bla bla bla bla bla bla, bla bla bla bla, bla bla bla bla bla bla bla. Ogni piatto è preparato con passione e ingredienti selezionati, bla bla bla bla bla, bla bla bla bla bla. L’atmosfera accogliente e l’attenzione al dettaglio rendono ogni momento speciale. Bla bla bla bla bla bla bla, bla bla bla bla bla bla bla bla. Prenota subito il tuo tavolo per scoprire un mondo di sapori e di emozioni.</p>
+
+        </div>
       </div>
-      <div class="menu">
-        <h1>Menù stagionale</h1>
-      </div>
+      <div class="table-box">
+        <h1 id="menu-title">Menù stagionale</h1>
+        <div class="menu-text">
+          <p>Un luogo dove il gusto e la tradizione si incontrano per offrire un’esperienza unica. Bla bla bla bla bla bla bla, bla bla bla bla, bla bla bla bla bla bla bla. Ogni piatto è preparato con passione e ingredienti selezionati, bla bla bla bla bla, bla bla bla bla bla. L’atmosfera accogliente e l’attenzione al dettaglio rendono ogni momento speciale. Bla bla bla bla bla bla bla, bla bla bla bla bla bla bla bla. Prenota subito il tuo tavolo per scoprire un mondo di sapori e di emozioni.</p>
+        </div>
+      </div>      
     </div>
   </div>
 
   <br><br><br><br><br>
   <br><br><br><br><br>
   <br><br><br><br><br>
+  <br><br><br><br><br>
+
 
 <script>
 
