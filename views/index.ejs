@@ -18,7 +18,7 @@
       <li><a class="active" href="">Home</a></li>
       <li><a href="/news">News</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="/about">Prenota</a></li>
+      <li><a href="/prenota">Prenota</a></li>
     </ul>
   </div>
 
@@ -50,35 +50,6 @@
   <br><br><br><br><br>
   <br><br><br><br><br>
 
-
-<script>
-
-let currentIndex = 0;
-
-function moveSlide(direction) {
-  const width=window.innerWidth;
-  const images = document.querySelectorAll('.gallery img');
-  const totalImages = images.length;
-  
-  currentIndex = (currentIndex + direction + totalImages) % totalImages;
-
-  images.forEach((img) => img.classList.remove('active'));
-  images.forEach((img) => img.id="nonActive");
-
-  images[currentIndex].classList.add('active');
-  images[currentIndex].id="active";
-
-  const gallery = document.querySelector('.gallery');
-  if(width>768){
-    gallery.style.transform = `translateX(-${(currentIndex) * (images[0].width + 30)}px)`;
-  }else{
-    gallery.style.transform = `translateX(-${(currentIndex) * (images[0].width)}px)`;
-  }
-  
-}
-
-
-</script>
 
 </body>
 </html>
