@@ -60,9 +60,13 @@ body {
 
   .active{
     font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 1px gray;
   }
+
 }
 
+/*-----------------------------------------HOME--------------------------------------------------------*/
 
 .content {
   background-color: white;
@@ -88,7 +92,7 @@ body {
 }
 
 .table-box{
-  background-color: white;
+  background-color: rgb(249, 247, 247);
   box-shadow: 6px 6px 6px gray;
   border-radius: 10px;
 }
@@ -101,6 +105,43 @@ body {
   padding: 0 5%;
 }
 
+/*-----------------------------------------SOCIAL--------------------------------------------------------*/
+
+.social-title{
+  text-align: center;
+}
+
+.social-container{
+  width: 100%;
+  padding: 0 10%;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  gap: 10%; 
+  width: 80%;
+}
+
+.social-content{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.social-text{
+  margin-top: 4%;
+}
+
+.social-img img{
+  height: 20vw;
+  width: auto;
+}
+
+.social-text a{
+  font-size: 50px;  
+  text-decoration: none;
+  color: black;
+}
+
+/*----------------------------------------MEDIA--------------------------------------------------------*/
 
 @media (max-width: 768px) {
   .header {
