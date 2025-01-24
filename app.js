@@ -45,8 +45,13 @@ app.get('/', function(req, res, next) {
     res.render('index');
 });
 
+app.get('/prenota', function(req, res, next) {
+  res.render('prenota');
+});
 
-
+app.get('/social', function(req, res, next) {
+  res.render('social');
+});
 
 app.listen(port, () => {
   console.log('Server in esecuzione su http://localhost:'+port);
