@@ -238,6 +238,7 @@ body {
 }
 
 .selection-content{
+  font-size: 14px;
   color: #6e6e6e;
 }
 
@@ -256,6 +257,11 @@ body {
   background-color: #cb334f;
   border: none;
   color: white;
+}
+
+.reservetion-button:hover{
+  cursor: pointer;
+  background-color: hsla(349, 60%, 50%, 0.729);
 }
 /*----------------------------------------RESPONSIVE--------------------------------------------------------*/
 
