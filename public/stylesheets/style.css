@@ -145,8 +145,6 @@ body {
 
 .reservetion-container{
   padding-top: 0.6vw;
-  height: 100vw;
-  background-color: #f7f6f7;
 }
 
 .reservetion-content{
@@ -249,7 +247,7 @@ body {
 }
 
 .reservetion-button{
-  margin: 0.5vw 25% 0 25%;
+  margin: 0.5vw 25% 0.5vw 25%;
   height: 2.5vw;
   width: 50%;
   font-weight: bold;
