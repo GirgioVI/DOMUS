@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>DOMUS</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/style-home.css' />
 </head>
 <body>
 
- 
+  
+
   <div class="header">
     <div class="title">
       <h1>DOMUS</h1>
@@ -16,7 +17,6 @@
   <div class="nav-bar">
     <ul>
       <li><a class="active" href="/">Home</a></li>
-      <li><a href="/news">News</a></li>
       <li><a href="/social">Social</a></li>
       <li><a href="/prenota">Prenota</a></li>
     </ul>
@@ -25,11 +25,11 @@
   
   <div class="content">
     <div class="image">
-      <img src="images\ristorante.jpg" alt="resturant">
+      <img src="images\ristorante1.jpg" alt="resturant" id="image-id">
     </div>
     <div class="table">
       <div class="table-box">
-        <h1 id="idea-title">Idea del ristorante</h1>
+        <h1 class="box-title">Idea del ristorante</h1>
         <div class="idea-text">
           <p>Un luogo dove il gusto e la tradizione si incontrano per offrire un’esperienza unica. Bla bla bla bla bla bla bla, bla bla bla bla, bla bla bla bla bla bla bla. Ogni piatto è preparato con passione e ingredienti selezionati, bla bla bla bla bla, bla bla bla bla bla. L’atmosfera accogliente e l’attenzione al dettaglio rendono ogni momento speciale. Bla bla bla bla bla bla bla, bla bla bla bla bla bla bla bla. Prenota subito il tuo tavolo per scoprire un mondo di sapori e di emozioni.</p>
           <p>Un luogo dove il gusto e la tradizione si incontrano per offrire un’esperienza unica. Bla bla bla bla bla bla bla, bla bla bla bla, bla bla bla bla bla bla bla. Ogni piatto è preparato con passione e ingredienti selezionati, bla bla bla bla bla, bla bla bla bla bla. L’atmosfera accogliente e l’attenzione al dettaglio rendono ogni momento speciale. Bla bla bla bla bla bla bla, bla bla bla bla bla bla bla bla. Prenota subito il tuo tavolo per scoprire un mondo di sapori e di emozioni.</p>
@@ -37,22 +37,16 @@
         </div>
       </div>
       <div class="table-box">
-        <h1 id="menu-title">Menù stagionale</h1>
+        <h1 class="box-title" id="box-title-menu">Menù stagionale</h1>
         <div class="menu-text">
-          <div class="menu-button-container">
-            <button class="menu-button"><</button>
-          </div>
           <div class="menu-container">
             <div class="menu-content" id="menu-active">
               <div class="menu-subtitle">
                 Antipasti
               </div>
               <div class="lista-piatti">
-                <ul>
-                  <li>Variazione di cavolfiore, nocciole e tartufo bianco</li>
-                  <li>Porcini e spunzali</li>
-                  <li>Gamberi, piselli e caviale</li>
-                </ul>
+                <p>Porcini e spunzali</p>
+                <p>Gamberi, piselli e caviale</p>
               </div>
             </div>
             <div class="menu-content">
@@ -60,23 +54,21 @@
                 Primi
               </div>
               <div class="lista-piatti">
-                <ul>
-                  <li>Variazione di cavolfiore, nocciole e tartufo bianco</li>
-                  <li>Porcini e spunzali</li>
-                  <li>Gamberi, piselli e caviale</li>
-                </ul>
-              </div>
+                <p>Variazione di cavolfiore, nocciole e tartufo bianco</p>
+                <p>Porcini e spunzali</p>
+                <p>Gamberi, piselli e caviale</p>
+                </div>
             </div>
             <div class="menu-content">
               <div class="menu-subtitle">
                 Secondi
               </div>
               <div class="lista-piatti">
-                <ul>
-                  <li>Variazione di cavolfiore, nocciole e tartufo bianco</li>
-                  <li>Porcini e spunzali</li>
-                  <li>Gamberi, piselli e caviale</li>
-                </ul>
+                
+                  <p>Variazione di cavolfiore, nocciole e tartufo bianco</p>
+                  <p>Porcini e spunzali</p>
+                  <p>Gamberi, piselli e caviale</p>
+                
               </div>
             </div>
             <div class="menu-content">
@@ -84,31 +76,41 @@
                 Dolci
               </div>
               <div class="lista-piatti">
-                <ul>
-                  <li>Variazione di cavolfiore, nocciole e tartufo bianco</li>
-                  <li>Porcini e spunzali</li>
-                  <li>Gamberi, piselli e caviale</li>
-                </ul>
+                  <p>Variazione di cavolfiore, nocciole e tartufo bianco</p>
+                  <p>Porcini e spunzali</p>
+                  <p>Gamberi, piselli e caviale</p>
               </div>
             </div>
-          </div>
-          <div class="menu-button-container">
-            <button class="menu-button">></button>
           </div>
         </div>
       </div>      
     </div>
   </div>
 
-  <br><br><br><br><br>
-  
 
-  <div class="bottom-bar">
-    <div class="logo">
-      <img src="images\logo.png" alt="DOMUS">
-    </div>
+<div class="footer">
+  <div class="logo">
+    <img src="images\logo.png" alt="DOMUS">
   </div>
+</div>
 
+<script>
+
+  
+  const obj = { value: 0 };
+  let i=1;
+
+  setInterval(() => {
+    i++;
+    if(i==7){
+      i=1;
+    }
+    document.querySelector("#image-id").setAttribute("src", "images\\ristorante"+i+".jpg");
+    console.log(obj);
+  }, 5000); 
+
+
+</script>
 
 </body>
 </html>
