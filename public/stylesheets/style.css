@@ -1,0 +1,139 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin:0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #f7f6f7;
+}
+
+.header {
+  background-color: #2d2c2b;
+  position: relative;
+  height: 100px;
+  z-index: 50;
+}
+
+.title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 20px;
+}
+
+.nav-bar{
+  height: 55px;
+  top: 0;
+  z-index: 200;
+  position: sticky;
+  padding: 0 10%;
+  background-color: #2d2c2b;
+  font-size: 20px;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    width: 50%;
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #252424;
+    font-weight: bold;
+  }
+
+  .active{
+    font-weight: bold;
+    color: hsl(32, 37%, 48%);
+    font-size: 22px;
+  }
+
+}
+
+.footer{
+  background-color: #2d2c2b;
+  height: 13.5vw;
+  padding-top: 1.5vw;
+  z-index: 3000;
+}
+
+.logo{
+  width: 12.5%;
+  margin: 0 43.75%;
+}
+
+.logo img{
+  width: 100%;
+  height: auto;
+}
+
+
+/*----------------------------------------RESPONSIVE--------------------------------------------------------*/
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-bar {
+    padding: 0 5%;
+  }
+  .nav-bar li {
+    width: 100%;
+    float: none;
+  }
+  .table {
+    grid-template-columns: 100%;
+    padding: 2.5% 5%;
+    column-gap: 0;
+    row-gap: 20px;
+  }
+  .title h1 {
+    font-size: 40px;
+    margin: 10px;
+  }
+  .header {
+    height: auto;
+    padding: 20px 0;
+  }
+  .footer {
+    height: auto;
+    padding: 2vw 0;
+  }
+  .logo {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .title h1 {
+    font-size: 30px;
+  }
+  .nav-bar li a {
+    font-size: 16px;
+    padding: 10px;
+  }
+  .box-title h1 {
+    font-size: 150%;
+  }
+  .box-text h1 {
+    font-size: 16px;
+  }
+}

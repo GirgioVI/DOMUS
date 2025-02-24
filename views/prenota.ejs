@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOMUS</title>
+  <link rel='stylesheet' href='/stylesheets/style-prenota.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="title">
+    <h1>DOMUS</h1>
+  </div>  
+</div>
+  
+<div class="nav-bar">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a class="active" href="/prenota">Prenota</a></li>
+  </ul>
+</div>
+
+<div class="reservetion-container">
+  <div class="reservetion-content">
+    <div class="reservetion-title">
+      Prenota un tavolo
+    </div>
+
+    <div class="month-container" data-months='["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"]'>
+      <button id="prec"><</button>
+      <div class="month" id="month-display"></div>
+      <button id="next">></button>
+    </div>
+
+    <div class="weekdays-container" id="weekdays-container"></div>
+    <div class="days-container" id="days-container"></div>
+
+    <div class="selection-container">
+      <div class="selection-content">
+        <label for="number-select">Numero di persone</label>
+        <br>
+        <select id="number-select">
+          <option value="">Seleziona</option>
+          <option value="2">2 persone</option>
+          <option value="3">3 persone</option>
+          <option value="4">4 persone</option>
+          <option value="5">5 persone</option>
+          <option value="6">6 persone</option>
+          <option value="7">7 persone</option>
+        </select>
+      </div>
+
+      <div class="selection-content">
+        <label for="time-select">Ora</label>
+        <br>
+        <select id="time-select">
+          <option value="">Seleziona</option>
+          <option value="19:00">18:30</option>
+          <option value="19:00">19:00</option>
+          <option value="19:30">19:30</option>
+          <option value="20:00">20:00</option>
+          <option value="20:30">20:30</option>
+          <option value="21:00">21:00</option>
+          <option value="21:30">21:30</option>
+          <option value="22:00">22:00</option>
+        </select>
+      </div>
+    </div>
+
+    <a href="/prenota"><button class="reservetion-button">PRENOTARE</button></a>
+    
+  </div>
+</div>
+
+
+<br><br><br><br>
+
+<div class="footer">
+  <div class="logo">
+    <img src="images\logo.png" alt="DOMUS">
+  </div>
+</div>
+
+<script>
+  const monthContainer = document.querySelector(".month-container");
+  const months = JSON.parse(monthContainer.getAttribute("data-months"));
+  const monthDisplay = document.getElementById("month-display");
+  const weekdaysContainer = document.getElementById("weekdays-container");
+  const daysContainer = document.getElementById("days-container");
+  const prevButton = document.getElementById("prec");
+  const nextButton = document.getElementById("next");
+  const timeSelect = document.getElementById("time-select");
+
+  const weekdays = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
+
+  // Ottieni il mese, giorno e anno correnti
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+  const currentDay = today.getDate();
+
+  let selectedYear = currentYear;
+  let currentIndex = currentMonth;
+
+  // Mostra il mese corrente all'avvio
+  monthDisplay.textContent = `${months[currentIndex]} ${selectedYear}`;
+  displayWeekdays();
+  updateDays(currentIndex, selectedYear);
+
+  // Event listeners per i bottoni
+  prevButton.addEventListener("click", () => {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = 11; // Torna a dicembre
+      selectedYear--; // Diminuisci l'anno
+    }
+    monthDisplay.textContent = `${months[currentIndex]} ${selectedYear}`;
+    updateDays(currentIndex, selectedYear);
+  });
+
+  nextButton.addEventListener("click", () => {
+    currentIndex++;
+    if (currentIndex > 11) {
+      currentIndex = 0; // Torna a gennaio
+      selectedYear++; // Incrementa l'anno
+    }
+    monthDisplay.textContent = `${months[currentIndex]} ${selectedYear}`;
+    updateDays(currentIndex, selectedYear);
+  });
+
+  // Funzione per calcolare il numero di giorni in un mese
+  function getDaysInMonth(month, year) {
+    return new Date(year, month + 1, 0).getDate();  
+  }
+
+  // Funzione per aggiornare i giorni nel calendario
+  function updateDays(monthIndex, year) {
+    const days = getDaysInMonth(monthIndex, year);
+    const firstDay = new Date(year, monthIndex, 1).getDay(); // Giorno della settimana del 1° giorno del mese
+    daysContainer.innerHTML = ""; // Pulisci i giorni precedenti
+
+    // Aggiungi giorni vuoti per allineare al primo giorno della settimana
+    for (let i = 0; i < (firstDay === 0 ? 6 : firstDay - 1); i++) {
+      const emptyDay = document.createElement("div");
+      emptyDay.className = "empty-day";
+      daysContainer.appendChild(emptyDay);
+    }
+
+    // Aggiungi i giorni del mese
+    for (let day = 1; day <= days; day++) {
+      const dayElement = document.createElement("div");
+
+      // Determina la classe in base alla data
+      if (
+        year < currentYear || 
+        (year === currentYear && monthIndex < currentMonth) || 
+        (year === currentYear && monthIndex === currentMonth && day < currentDay)
+      ) {
+        dayElement.className = "pass-day";
+      } else {
+        dayElement.className = "post-day";
+        // Aggiungi evento per selezionare il giorno
+        dayElement.addEventListener("click", () => {
+          // Deseleziona tutti i giorni selezionati
+          const selectedDays = document.querySelectorAll(".selected-day");
+          selectedDays.forEach(day => day.classList.remove("selected-day"));
+
+          // Seleziona il giorno cliccato
+          dayElement.classList.add("selected-day");
+
+          // Abilita la selezione dell'ora
+          timeSelect.disabled = false;
+        });
+      }
+
+      dayElement.textContent = day;
+      daysContainer.appendChild(dayElement);
+    }
+  }
+
+  // Funzione per visualizzare i giorni della settimana
+  function displayWeekdays() {
+    weekdaysContainer.innerHTML = ""; // Pulisci i giorni della settimana
+    weekdays.forEach((weekday) => {
+      const weekdayElement = document.createElement("div");
+      weekdayElement.className = "weekday";
+      weekdayElement.textContent = weekday;
+      weekdaysContainer.appendChild(weekdayElement);
+    });
+  }
+</script>
+
+</body>
+</html>

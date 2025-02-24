@@ -1,0 +1,122 @@
+@import "style.css";
+
+.reservetion-container{
+    padding-top: 1vw;
+  }
+  
+  .reservetion-content{
+    padding: 0 25%;
+  }
+  
+  .reservetion-title{
+    margin: 0 25% 0.5vw 25%;
+    text-align: center;
+    font-size: 35px;
+  }
+  
+  .month-container{
+    padding: 0 25%;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+  }
+  
+  .month-container button{
+    font-size: 24px;
+    background: none;
+    border: none;
+  }
+  
+  .month-container button:hover{
+    cursor: pointer;
+  }
+  
+  .month{
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .weekdays-container{
+    padding: 0 25%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    gap: 3px;
+    margin: 1vw 0;
+  }
+  
+  .weekday{
+    text-align: center;
+  }
+  
+  .days-container{
+    padding: 0 25%;
+    height: 18vw;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-rows: 3vw 3vw 3vw 3vw 3vw 3vw 3vw;
+    gap: 3px;
+  }
+  
+  .pass-day{
+    color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(238, 238, 238, 0.4);
+    font-weight: bold;
+    height: 3vw;
+    align-content: center;
+    text-align: center;
+  }
+  
+  .post-day{
+    background-color: rgb(238, 238, 238);
+    font-weight: bold;
+    height: 3vw;
+    align-content: center;
+    text-align: center;
+  }
+  
+  .post-day:hover{
+    background-color: #cccccc;
+  }
+  
+  .selected-day{
+    font-weight: bold;
+    color: #fff;
+    background-color: #cccccc;
+    height: 100%;
+    align-content: center;
+    text-align: center;
+  }
+  
+  .selection-container{
+    padding: 1.2vw 25% 0.6vw 25%;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    gap: 10%;
+  }
+  
+  .selection-content{
+    font-size: 14px;
+    color: #6e6e6e;
+  }
+  
+  .selection-content select{
+    height: 2vw;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .reservetion-button{
+    margin: 0.5vw 25% 0 25%;
+    height: 2.5vw;
+    width: 50%;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: hsl(32, 37%, 48%);
+    border: none;
+    color: white;
+  }
+  
+  .reservetion-button:hover{
+    cursor: pointer;
+    background-color: hsla(32, 37%, 48%, 0.729);
+  }

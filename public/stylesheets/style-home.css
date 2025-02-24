@@ -1,0 +1,80 @@
+@import "style.css";
+
+.content {
+    width: 100%;
+    position: relative;
+}
+
+.table{
+    padding: 4.8% 7.5%; 
+    display: grid;
+    grid-template-columns: 40% 40%;
+    column-gap: 20%;
+    height: fit-content;
+}
+
+.table-box{
+    text-align: center;
+    background-color: white;
+    box-shadow: 6px 6px 6px gray;
+    border-radius: 10px;
+}
+
+.box-content{
+    padding: 3% 0 2% 0;
+}
+
+.box-title{
+    height: 15%;
+    color: black;
+    margin-top: 5%;
+    margin-bottom: 4%;
+    align-content: center;    
+}
+
+.box-title h1{
+    margin: 0;
+    font-size: 200%;    
+}
+
+.box-text{
+    padding: 0 8%;  
+    font-size: 112%;
+}
+
+.box-text h1{  
+    margin: 5% 0 3% 0;
+    font-size: 18px;
+}
+
+
+
+/*-----------------------immagine 1------------------------*/
+
+.image{
+    width: 100%;
+    z-index: -300;
+    overflow: hidden;
+    display: flex;
+}
+
+.image img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 1s e  ase-in-out;
+    flex-shrink: 0; 
+}
+
+.slide-out {
+    transform: translateX(-100%);
+}
+
+.slide-in {
+    opacity: transform 1s 100%;
+}
+
+#image2{
+    height: calc(100dvh - 55px);
+}
+
